@@ -16,7 +16,8 @@
     "url": "https://github.com/harshPPatel/House-MD-Show-Website/issues"
   },
   "homepage": "https://github.com/harshPPatel/House-MD-Show-Website#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "browser-sync": "^2.26.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
