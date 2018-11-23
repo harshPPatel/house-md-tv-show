@@ -1,0 +1,14 @@
+<svg id="a630513c-b733-44d7-8db7-7e80b65dbd73" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 299.53 299.53">
+  <title>prev-arrow</title>
+  <g>
+    <g id="b7a133e8-acc4-47dc-b6f0-2156a38a429f" data-name="Path 52">
+      <polygon points="53.75 149.45 138.65 64.55 154.53 80.43 96.74 138.22 231.68 138.22 231.68 160.69 96.76 160.69 154.53 218.49 138.65 234.37 53.75 149.45" style="fill: #717171"/>
+    </g>
+    <g id="e8791e70-51c8-4b92-a809-bdc4c487e5c0" data-name="next arrow">
+      <g id="a6eec4c0-d1fa-48f9-bc92-c18e115b4b8d" data-name="Ellipse 6">
+        <circle cx="149.77" cy="149.77" r="149.77" style="fill: none"/>
+        <path d="M250,100.23c82.58,0,149.77,67.19,149.77,149.77S332.58,399.77,250,399.77,100.23,332.58,100.23,250,167.42,100.23,250,100.23Zm0,277.07A127.3,127.3,0,1,0,122.7,250,127.44,127.44,0,0,0,250,377.3Z" transform="translate(-100.23 -100.23)" style="fill: #717171"/>
+      </g>
+    </g>
+  </g>
+</svg>
