@@ -1,0 +1,23 @@
+include helpers/variables.pug
+
+nav
+    .row
+        .logo
+            a(href="#header")
+                include icons/logo.html
+        
+        ul.nav-main
+            each val, index in navLink
+                li.nav-item
+                    a.nav-links(href="#" + navIDs[index])= val
+        
+        #toggle
+            .span#one
+            .span#two
+            .span#three
+
+#resize
+    ul#menu
+        each val, index in navLink
+            li.nav-item
+                a.nav-links(href="#" + navIDs[index])= val
