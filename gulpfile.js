@@ -17,16 +17,17 @@ var { parallel,
 
 var pugSource       = 'source/pug/*.pug',
     sassSource      = 'source/sass/**/*.sass',
-    jsVendorSource  = 'source/js/vendors/*.js'
-    jsMainSource    = 'source/js/*.js'
-    imageSource     = 'source/img/*'
+    jsVendorSource  = 'source/js/vendors/*.js',
+    jsCrossPlatformSource = 'source/js/crossPlatform/*.js',
+    jsMainSource    = 'source/js/*.js',
+    imageSource     = 'source/img/*',
     faviconSource   = 'source/favicon/*',
     jsonSource      = 'source/json/*.json';
 
 var htmlDestination     = 'build/',
     cssDestination      = 'build/assets/css/',
-    jsDestination       = 'build/assets/js/'
-    imageDestination    = 'build/assets/img/'
+    jsDestination       = 'build/assets/js/',
+    imageDestination    = 'build/assets/img/',
     faviconDestination  = 'build/assets/favicon/',
     jsonDestination     = 'build/assets/json/';
 
@@ -68,6 +69,15 @@ task('vendorJS', function(cb) {
     ],
     cb
   );
+})
+
+task('crossPlatformJS', function(cb) {
+  pump([
+      src(jsCrossPlatformSource),
+      plumber(),
+      dest(jsDestination)
+    ],
+  cb);
 })
 
 task('appJS', function(cb) {
@@ -114,6 +124,7 @@ task('watch', function(cb) {
 
   watch('source/pug/**/*.pug', task('html'));
   watch(sassSource, task('sass'));
+  watch(jsCrossPlatformSource, task('crossPlatformJS'));
   watch(jsVendorSource, task('vendorJS'));
   watch(jsMainSource, task('appJS'));
   watch(imageSource, task('image'));
@@ -130,9 +141,10 @@ task('watch', function(cb) {
   cb();
 })
 
-exports.default = parallel( task('html'), 
-                            task('sass'), 
-                            task('vendorJS'), 
+exports.default = parallel( task('html'),
+                            task('sass'),
+                            task('crossPlatformJS'),
+                            task('vendorJS'),
                             task('appJS'),
                             task('image'),
                             task('favicon'),
