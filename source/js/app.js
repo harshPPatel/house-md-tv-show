@@ -51,3 +51,8 @@ function onScroll(event){
         }
     });
 }
+
+// Pausing the youtube video when modal is closed
+$("#trailer").on('hidden.bs.modal', function (e) {
+    $("#trailer iframe").attr("src", $("#trailer iframe").attr("src"));
+});
