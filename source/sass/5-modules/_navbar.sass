@@ -1,13 +1,13 @@
 nav.navbar
-  height: 80px
-  max-height: 80px
+  height: $navbar-height
+  max-height: $navbar-height
   box-shadow: $basic-box-shadow
-  color: $white-color
+  background-color: $white-color
 
   .navbar-brand
     display: block!important
-    min-height: 40px
-    min-width: 40px
+    min-height: $navbar-brand-height
+    min-width: $navbar-brand-height
     svg
       height: 100%
       width: auto
@@ -17,8 +17,8 @@ nav.navbar
     text-transform: uppercase
     color: $font-color!important
     transition: all 0.15s ease
-    margin-right: 20px!important
-    padding: 30px 20px!important
+    margin-right: 1.25rem!important
+    padding: 1.875rem 1.25rem!important
     text-decoration: none
     &:last-of-type
       margin-right: 0
@@ -28,7 +28,7 @@ nav.navbar
   .active
     background-color: $primary-color
     color: $white-color!important
-    transform: scaleY(1.1)
+    transform: scaleY(0.9)
 
 #resize
   display: none

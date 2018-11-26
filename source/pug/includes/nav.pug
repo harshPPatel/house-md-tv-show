@@ -11,18 +11,19 @@ nav.navbar.navbar-expand-lg.navbar-light.fixed-top
         .span#three
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.ml-auto
-        li.nav-item
-          a.nav-link.active(href="#header") Home
-        li.nav-item
-          a.nav-link(href="#about") About
-        li.nav-item
-          a.nav-link(href="#trailer") Trailer
-        li.nav-item
-          a.nav-link(href="#characters") Characters
-        li.nav-item
-          a.nav-link(href='#seasons') Seasons
+        each val, index in navLink
+          li.nav-item
+            if index == 0
+              a.nav-link.active(href="#" + navIDs[index])= val
+            else 
+                
+              a.nav-link(href="#" + navIDs[index])= val
 #resize
     ul#menu
         each val, index in navLink
             li.nav-item
+              if index == 0
+                a.nav-link.active(href="#" + navIDs[index])= val
+              else
+                
                 a.nav-link(href="#" + navIDs[index])= val

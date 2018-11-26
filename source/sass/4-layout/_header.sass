@@ -1,0 +1,30 @@
+header
+  height: calc(100vh - #{$navbar-height})
+  margin-top: $navbar-height
+  background: linear-gradient(rgba($black-color, 0.7) rgba($black-color, 0.7)), url('../../assets/img/hero-bg.jpg') center center no-repeat
+  background-size: cover
+  color: $white-color
+  @extend %flex
+
+  img
+    max-height: 475px
+    box-shadow: $basic-box-shadow
+
+  .col-lg-6
+    &:first-of-type
+      text-align: center
+    &:last-of-type
+      @extend %flex
+      h3
+        letter-spacing: 1px
+        margin-bottom: 20px
+        span
+          color: $primary-color
+          text-shadow: $basic-text-shadow
+      h6
+        color: $primary-color
+        margin-bottom: 20px
+      p
+        color: $white-color
+        opacity: 0.8
+        margin-bottom: 20px
