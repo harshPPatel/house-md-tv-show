@@ -12,13 +12,15 @@ header
             span 15 July, 2018
           p A doctor facing challenging medical cases in Hospital. A drug addict doctor having half muscle cut out on his thigh facing many problems in the hospital. he his working with three great doctors in his team to solve the impossible cases.
           
-          a.btn.ghost-primary-btn 
+          button.btn.ghost-primary-btn(type="button" data-toggle="modal" data-target="#trailer")
             |
             span
               | 
               include icons/play-icon.html
             | Trailer
             
+include helpers/trailerModal.pug
+        
           
           
 //- Make date a variable,
