@@ -1,31 +1,60 @@
 #options-per-view.slider.glide.glide--ltr.glide--slider.glide--swipeable
   .slider__track.glide__track(data-glide-el='track')
-    ul.slider__slides.glide__slides(style='transition: transform 0ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s; width: 2540px; transform: translate3d(0px, 0px, 0px);')
-      li.slider__frame.glide__slide.glide__slide--active(style='width: 245px; margin-right: 5px;') 0
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 1
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 2
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 3
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 4
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 5
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 6
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 7
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px; margin-right: 5px;') 8
-      li.slider__frame.glide__slide(style='width: 245px; margin-left: 5px;') 9
+    ul.slider__slides.glide__slides
+      li.slider__frame.glide__slide.glide__slide--active 
+        img(src="assets/img/character-1.jpg" alt="George House")
+        .text
+          h5 Greg House
+          p.real-name (Hugh Laurie)
+          p.profession Head Of Special <br> Case Department
+          a(href="#") Learn More>>
+        
+      li.slider__frame.glide__slide 
+        img(src="assets/img/character-2.jpg" alt="Lisa Cuddy")
+        .text
+          h5 Lisa Cuddy
+          p.real-name (Lisa Edelstein)
+          p.profession Head Of Hospital
+          a(href="#") Learn More>>
+      li.slider__frame.glide__slide 
+        img(src="assets/img/character-3.jpg" alt="Alison Cameron")
+        .text
+          h5 Alison Cameron
+          p.real-name (Jennifer Morrison)
+          p.profession Physician & Immunologist
+          a(href="#") Learn More>>
+      li.slider__frame.glide__slide 
+        img(src="assets/img/character-4.jpg" alt="Robert Chase")
+        .text
+          h5 Robert Chase
+          p.real-name (Jesse Spencer)
+          p.profession Physician & Surgeon
+          a(href="#") Learn More>>
+      li.slider__frame.glide__slide 
+        img(src="assets/img/character-5.jpg" alt="Eric Foreman")
+        .text
+          h5 Eric Foreman
+          p.real-name (Omar Epps)
+          p.profession A Neurologist
+          a(href="#") Learn More>>
+      li.slider__frame.glide__slide 
+        img(src="assets/img/character-6.jpg" alt="James Wilson")
+        .text
+          h5 Jamed Wilson
+          p.real-name (Sean Leonard)
+          p.profession Head of the <br>Department of Oncology
+          a(href="#") Learn More>>
   div(data-glide-el='controls')
-    button.slider__arrow.slider__arrow--prev.glide__arrow.glide__arrow--prev(data-glide-dir='<')
-      svg(xmlns='http://www.w3.org/2000/svg', width='18', height='18', viewBox='0 0 24 24')
-        path(d='M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z')
-    button.slider__arrow.slider__arrow--next.glide__arrow.glide__arrow--next(data-glide-dir='>')
-      svg(xmlns='http://www.w3.org/2000/svg', width='18', height='18', viewBox='0 0 24 24')
-        path(d='M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z')
+    a.slider__arrow.slider__arrow--prev.glide__arrow.glide__arrow--prev(data-glide-dir='<' href="#")
+      include ../icons/prev-arrow.html
+    a.slider__arrow.slider__arrow--next.glide__arrow.glide__arrow--next(data-glide-dir='>' href="#")
+      include ../icons/next-arrow.html
   .slider__bullets.glide__bullets(data-glide-el='controls[nav]')
-    button.slider__bullet.glide__bullet.glide__bullet--active(data-glide-dir='=0')
-    button.slider__bullet.glide__bullet(data-glide-dir='=1')
-    button.slider__bullet.glide__bullet(data-glide-dir='=2')
-    button.slider__bullet.glide__bullet(data-glide-dir='=3')
-    button.slider__bullet.glide__bullet(data-glide-dir='=4')
-    button.slider__bullet.glide__bullet(data-glide-dir='=5')
-    button.slider__bullet.glide__bullet(data-glide-dir='=6')
-    button.slider__bullet.glide__bullet(data-glide-dir='=7')
-    button.slider__bullet.glide__bullet(data-glide-dir='=8')
-    button.slider__bullet.glide__bullet(data-glide-dir='=9')
+    a.slider__bullet.glide__bullet.glide__bullet--active(href="#" data-glide-dir='=0')
+      span.bullet
+    a.slider__bullet.glide__bullet(href="#" data-glide-dir='=1')
+      span.bullet
+    a.slider__bullet.glide__bullet(href="#" data-glide-dir='=2')
+      span.bullet
+    a.slider__bullet.glide__bullet(href="#" data-glide-dir='=3')
+      span.bullet

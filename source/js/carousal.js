@@ -7,8 +7,9 @@ var glide = new Glide('#options-per-view', {
   touchRatio: 0.5,
   rewind: true,
   rewindDuration: 2000,
-  animationDuration: 2000,
+  animationDuration: 800,
   perView: 3,
+  bound: true,
   breakpoints: {
     600: {
       perView: 1
