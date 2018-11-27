@@ -14,7 +14,7 @@ nav.navbar.navbar-expand-lg.navbar-light.fixed-top
         each val, index in navLink
           li.nav-item
             if val == 'Trailer'
-              a.nav-link(href="#" data-toggle="modal" data-target="#trailer")= val
+              a.nav-link(href="" data-toggle="modal" data-target="#trailer")= val
             else if index == 0
               a.nav-link.active(href="#" + navIDs[index])= val
             else 

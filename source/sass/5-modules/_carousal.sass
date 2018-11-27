@@ -65,13 +65,24 @@
   .profession
     font-family: $sub-heading-font
     margin-bottom: 8px
-  a
-    font-family: $sub-heading-font
-    text-decoration: underline
-    color: $font-color
-    opacity: 1
-    transition: all 0.1s ease-in
-    &:hover
+  a.link
+    &:link,
+    &:visited
+      background-color: transparent!important
+      border: none!important
+      outline: none!important
+      box-shadow: none!important
+      font-family: $sub-heading-font
+      text-decoration: underline
+      color: $font-color
+      opacity: 1
+      transition: all 0.1s ease-in
+    &:hover,
+    &:active
+      background-color: transparent
+      border: none
+      outline: none
+      box-shadow: none
       opacity: 0.9
 
 .glide__slides
