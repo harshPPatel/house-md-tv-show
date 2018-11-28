@@ -14,18 +14,20 @@ nav.navbar.navbar-expand-lg.navbar-light.fixed-top
         each val, index in navLink
           li.nav-item
             if val == 'Trailer'
-              a.nav-link(href="" data-toggle="modal" data-target="#trailer")= val
+              a.nav-link.--js-nav-link(class="--js-scroll-to-" + navIDs[index], href="" data-toggle="modal" data-target="#trailer")= val
             else if index == 0
-              a.nav-link.active(href="#" + navIDs[index])= val
+              a.nav-link.active.--js-nav-link(class="--js-scroll-to-" + navIDs[index], href="#" + navIDs[index])= val
             else 
                 
-              a.nav-link(href="#" + navIDs[index])= val
+              a.nav-link.--js-nav-link(class="--js-scroll-to-" + navIDs[index], href="#" + navIDs[index])= val
 #resize
     ul#menu
         each val, index in navLink
             li.nav-item
-              if index == 0
-                a.nav-link.active(href="#" + navIDs[index])= val
-              else
-                
-                a.nav-link(href="#" + navIDs[index])= val
+              if val == 'Trailer'
+                a.nav-link.--js-nav-link(class="--js-scroll-to-" + navIDs[index], href="" data-toggle="modal" data-target="#trailer")= val
+              else if index == 0
+                a.nav-link.active.--js-nav-link(class="--js-scroll-to-" + navIDs[index], href="#" + navIDs[index])= val
+              else 
+                  
+                a.nav-link.--js-nav-link(class="--js-scroll-to-" + navIDs[index], href="#" + navIDs[index])= val
