@@ -2,7 +2,7 @@ var input = document.querySelector('#options-per-view-input')
 
 var glide = new Glide('#options-per-view', {
   hoverpause: true,
-  autoplay: 4000,
+  autoplay: 10000,
   dragThreshold: 120,
   touchRatio: 0.5,
   rewind: true,

@@ -1,0 +1,21 @@
+ul#myTab.nav.nav-pills.justify-content-center(role='tablist')
+  li.nav-item
+    a#home-tab.nav-link.active(role='tab', aria-selected='true', aria-controls='seasonOne', href='#seasonOne', data-toggle='tab') 01
+  li.nav-item
+    a#profile-tab.nav-link(role='tab', aria-selected='false', aria-controls='profile', href='#profile', data-toggle='tab') 02
+  li.nav-item
+    a#contact-tab.nav-link(role='tab', aria-selected='false', aria-controls='contact', href='#contact', data-toggle='tab') 03
+  li.nav-item
+    a#home-tab.nav-link(role='tab', aria-selected='true', aria-controls='seasonOne', href='#seasonOne', data-toggle='tab') 04
+  li.nav-item
+    a#profile-tab.nav-link(role='tab', aria-selected='false', aria-controls='profile', href='#profile', data-toggle='tab') 05
+  li.nav-item
+    a#contact-tab.nav-link(role='tab', aria-selected='false', aria-controls='contact', href='#contact', data-toggle='tab') 06
+  li.nav-item
+    a#home-tab.nav-link(role='tab', aria-selected='true', aria-controls='seasonOne', href='#seasonOne', data-toggle='tab') 07
+  li.nav-item
+    a#profile-tab.nav-link(role='tab', aria-selected='false', aria-controls='profile', href='#profile', data-toggle='tab') 08
+#myTabContent.tab-content
+  #seasonOne.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab') Season 1
+  #profile.tab-pane.fade(role='tabpanel', aria-labelledby='profile-tab') ...
+  #contact.tab-pane.fade(role='tabpanel', aria-labelledby='contact-tab') ...
