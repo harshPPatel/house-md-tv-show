@@ -1,6 +1,7 @@
 .newsletter-section
-  @extend %section-padding
-  background: linear-gradient(to right, rgba($black-color, 0.7) rgba($black-color, 0.7)), url($newsletter-bg) top center no-repeat
+  .overlay
+    @extend %section-padding
+  background: url($newsletter-bg) top center no-repeat
   background-size: cover
   h2,
   p
