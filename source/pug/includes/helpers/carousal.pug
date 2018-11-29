@@ -1,62 +1,49 @@
+//- TO Add New Slide,
+//-     1. Add image in the folder
+//-     2. Add data in objectVariables.pug file with the same format
+//-     3. Add next number in n array
+//-     4. run the pug!
+
+- var n = [1, 2, 3, 4, 5, 6];     // Loop Controler
+- var k = 0;                      // Loop Controler For Bullets
+- var slides = n.length;          // Number of slides you wish
+include objectVariables.pug
+
 #options-per-view.slider.glide.glide--ltr.glide--slider.glide--swipeable
   .slider__track.glide__track(data-glide-el='track')
     ul.slider__slides.glide__slides
-      li.slider__frame.glide__slide.glide__slide--active 
-        img(src="assets/img/character-1.jpg" alt="George House")
-        .text
-          h5 Greg House
-          p.real-name (Hugh Laurie)
-          p.profession Head Of Special <br> Case Department
-          a.link(href="") Learn More>>
-          
-
-        
-      li.slider__frame.glide__slide 
-        img(src="assets/img/character-2.jpg" alt="Lisa Cuddy")
-        .text
-          h5 Lisa Cuddy
-          p.real-name (Lisa Edelstein)
-          p.profession Head Of Hospital
-          a.link(href="") Learn More>>
-      li.slider__frame.glide__slide 
-        img(src="assets/img/character-3.jpg" alt="Alison Cameron")
-        .text
-          h5 Alison Cameron
-          p.real-name (Jennifer Morrison)
-          p.profession Physician & Immunologist
-          a.link(href="") Learn More>>
-      li.slider__frame.glide__slide 
-        img(src="assets/img/character-4.jpg" alt="Robert Chase")
-        .text
-          h5 Robert Chase
-          p.real-name (Jesse Spencer)
-          p.profession Physician & Surgeon
-          a.link(href="") Learn More>>
-      li.slider__frame.glide__slide 
-        img(src="assets/img/character-5.jpg" alt="Eric Foreman")
-        .text
-          h5 Eric Foreman
-          p.real-name (Omar Epps)
-          p.profession A Neurologist
-          a.link(href="") Learn More>>
-      li.slider__frame.glide__slide 
-        img(src="assets/img/character-6.jpg" alt="James Wilson")
-        .text
-          h5 Jamed Wilson
-          p.real-name (Sean Leonard)
-          p.profession Head of the <br>Department of Oncology
-          a.link(href="") Learn More>>
+      each val, index in n
+        if n == 1
+          li.slider__frame.glide__slide.glide__slide--active 
+            img(src="assets/img/character-" + val + ".jpg" alt = carouselText[val - 1].name)
+            .text
+              h5= carouselText[val - 1].name
+              p.real-name= carouselText[val - 1].realName
+              p.profession= carouselText[val - 1].profession
+              a.link(href="") Learn More>>
+        else
+      
+          li.slider__frame.glide__slide
+            img(src="assets/img/character-" + val + ".jpg" alt= carouselText[val - 1].name)
+            .text
+              h5= carouselText[val - 1].name
+              p.real-name= carouselText[val - 1].realName
+              p.profession= carouselText[val - 1].profession
+              a.link(href="") Learn More>>
+              
   div(data-glide-el='controls')
     a.slider__arrow.slider__arrow--prev.glide__arrow.glide__arrow--prev(data-glide-dir='<' href="#")
       include ../icons/prev-arrow.html
     a.slider__arrow.slider__arrow--next.glide__arrow.glide__arrow--next(data-glide-dir='>' href="#")
       include ../icons/next-arrow.html
   .slider__bullets.glide__bullets(data-glide-el='controls[nav]')
-    a.slider__bullet.glide__bullet.glide__bullet--active(href="#" data-glide-dir='=0')
-      span.bullet
-    a.slider__bullet.glide__bullet(href="#" data-glide-dir='=1')
-      span.bullet
-    a.slider__bullet.glide__bullet(href="#" data-glide-dir='=2')
-      span.bullet
-    a.slider__bullet.glide__bullet(href="#" data-glide-dir='=3')
-      span.bullet
+    
+    while k <= (slides - 3)
+      if k == 0
+        a.slider__bullet.glide__bullet.glide__bullet--active(href="#" data-glide-dir='=' + k++)
+          span.bullet
+      else
+        
+        a.slider__bullet.glide__bullet(href="#" data-glide-dir='=' + k++)
+          span.bullet
+        
