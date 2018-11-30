@@ -5,10 +5,10 @@ nav.navbar.navbar-expand-lg.navbar-light.fixed-top
     a.navbar-brand(href='#header')
       include icons/logo.html
     button.navbar-toggler(aria-expanded='false', aria-controls='navbarSupportedContent', aria-label='Toggle navigation', type='button', data-target='#navbarSupportedContent', data-toggle='collapse')
-      #toggle
-        .span#one
-        .span#two
-        .span#three
+      span#toggle
+        span.span#one
+        span.span#two
+        span.span#three
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.ml-auto
         each val, index in navLink
