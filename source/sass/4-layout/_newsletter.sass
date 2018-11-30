@@ -1,6 +1,6 @@
 .newsletter-section
   .overlay
-    @extend %section-padding
+    +section-padding
   background: url($newsletter-bg) top center no-repeat
   background-size: cover
   h2,
@@ -15,7 +15,25 @@
 
   .col-lg-6
     &:last-of-type
-      @extend %flex
+      +flex
+    @media (max-width: $medium-breakpoints)
+      text-align: center
+      &:last-of-type
+        width: 80%
+        margin: 0 auto
+        div
+          width: 80%
+        justify-content: center
+        margin-top: 0.5rem
+    @media (max-width: $medium-breakpoints)
+      &:last-of-type
+        width: 95%
+        margin-top: 0.7rem
+    @media (max-width: $very-extra-small-breakpoints)
+      &:last-of-type
+        width: 100%
+        div
+          width: 100%
 
   form
     width: 100%
