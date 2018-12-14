@@ -9,6 +9,7 @@ $('#--js-modal-close').on('click', function(e) {
 $('.--js-nav-link').click(function() {
   $('.--js-nav-link').removeClass('active');
   $(this).addClass('active');
+  $('#toggle').click();
 })
 
 // Toggle Humberger Span

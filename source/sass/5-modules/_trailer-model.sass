@@ -1,6 +1,11 @@
 #trailer
+  padding-right: 0
   .modal-dialog
     max-width: 80vw
+    @media (max-width: $medium-breakpoints)
+      max-width: 90vw
+    @media (max-width: $extra-small-breakpoints)
+      margin: 0 auto
 
   .modal-content
     border-radius: 0
@@ -39,6 +44,13 @@
     max-height: 75vh
     max-width: 80vw
     overflow: hidden
+    @media (max-width: $medium-breakpoints)
+      max-height: 60vh
+      max-width: 90vw!important
+    @media (max-width: $extra-small-breakpoints)
+      max-height: 40vh
+    @media (max-width: $very-extra-small-breakpoints)
+      max-height: 30vh
     iframe
       height: auto
       min-height: 50vh
@@ -46,3 +58,10 @@
       min-width: 60vw
       width: 80vw
       border: none
+      @media(max-width: $medium-breakpoints)
+        width: 100%
+        height: 100%
+      @media(max-width: $extra-small-breakpoints)
+        min-height: 40vh
+      @media(max-width: $very-extra-small-breakpoints)
+        min-height: 30vh
