@@ -1,6 +1,8 @@
+//- Importing variables
 include variables.pug
 include objectVariables.pug
 
+//- Nav pills
 ul#season-tabs.nav.nav-pills.justify-content-between(role='tablist')
   each val in seasonTabs
     li.nav-item
@@ -10,6 +12,7 @@ ul#season-tabs.nav.nav-pills.justify-content-between(role='tablist')
         
         a.nav-link(id='season-'+ val + '-tab', role='tab', aria-selected='true', aria-controls='season-'+ val, href='#season-'+ val, data-toggle='tab')= '0' + val
 
+//- Content
 #myTabContent.tab-content
   each val, index in seasonTabs
     if val == 1

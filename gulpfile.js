@@ -1,66 +1,74 @@
-var { parallel,
-      src,
-      dest,
-      task,
-      watch }     = require('gulp'),
-    htmlmin       = require('gulp-htmlmin'),
-    cleanCSS      = require('gulp-clean-css'),
-    uglify        = require('gulp-uglify'),
-    pump          = require('pump'),
-    concat        = require('gulp-concat'),
-    sass          = require('gulp-sass'),
-    imagemin      = require('gulp-imagemin'),
-    autoprefixer  = require('gulp-autoprefixer'),
-    plumber       = require('gulp-plumber'),
-    browserSync   = require('browser-sync'),
-    pug           = require('gulp-pug');
+var { parallel, src, dest, task, watch } = require('gulp'),
+  htmlmin = require('gulp-htmlmin'),
+  cleanCSS = require('gulp-clean-css'),
+  uglify = require('gulp-uglify'),
+  pump = require('pump'),
+  concat = require('gulp-concat'),
+  sass = require('gulp-sass'),
+  imagemin = require('gulp-imagemin'),
+  autoprefixer = require('gulp-autoprefixer'),
+  plumber = require('gulp-plumber'),
+  browserSync = require('browser-sync'),
+  pug = require('gulp-pug');
 
-var pugSource       = 'source/pug/*.pug',
-    sassSource      = 'source/sass/**/*.sass',
-    jsVendorSource  = 'source/js/vendors/*.js',
-    jsCrossPlatformSource = 'source/js/crossPlatform/*.js',
-    jsMainSource    = 'source/js/*.js',
-    imageSource     = 'source/img/*',
-    faviconSource   = 'source/favicon/*',
-    jsonSource      = 'source/json/*.json';
+var pugSource = 'source/pug/*.pug',
+  sassSource = 'source/sass/**/*.sass',
+  jsVendorSource = 'source/js/vendors/*.js',
+  jsCrossPlatformSource = 'source/js/crossPlatform/*.js',
+  jsMainSource = 'source/js/*.js',
+  imageSource = 'source/img/*',
+  faviconSource = 'source/favicon/*',
+  jsonSource = 'source/json/*.json';
 
-var htmlDestination     = 'build/',
-    cssDestination      = 'build/assets/css/',
-    jsDestination       = 'build/assets/js/',
-    imageDestination    = 'build/assets/img/',
-    faviconDestination  = 'build/assets/favicon/',
-    jsonDestination     = 'build/assets/json/';
+var htmlDestination = 'build/',
+  cssDestination = 'build/assets/css/',
+  jsDestination = 'build/assets/js/',
+  imageDestination = 'build/assets/img/',
+  faviconDestination = 'build/assets/favicon/',
+  jsonDestination = 'build/assets/json/';
 
+// HTML Task
 task('html', function(cb) {
   return src(pugSource)
     .pipe(pug())
     .pipe(plumber())
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
+    .pipe(
+      htmlmin({
+        collapseWhitespace: true
+      })
+    )
     .pipe(dest(htmlDestination));
   cb();
-})
+});
 
+// SASS Task
 task('sass', function(cb) {
   return src(sassSource)
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
+    .pipe(
+      sass({
+        outputStyle: 'compressed'
+      })
+    )
     .pipe(plumber())
-    .pipe(autoprefixer({
-      browsers: ["cover 99.5%"]
-    }))
-    .pipe(cleanCSS({
-      compatibility: 'ie8'
-    }))
+    .pipe(
+      autoprefixer({
+        browsers: ['cover 99.5%']
+      })
+    )
+    .pipe(
+      cleanCSS({
+        compatibility: 'ie8'
+      })
+    )
     .pipe(concat('styles.css'))
-    .pipe(dest(cssDestination))
+    .pipe(dest(cssDestination));
   cb();
-})
+});
 
+// Vendor JS Task
 task('vendorJS', function(cb) {
-  pump([
+  pump(
+    [
       src(jsVendorSource),
       plumber(),
       concat('vendors.js'),
@@ -69,19 +77,17 @@ task('vendorJS', function(cb) {
     ],
     cb
   );
-})
+});
 
+// Cross Platform JavaScript Task
 task('crossPlatformJS', function(cb) {
-  pump([
-      src(jsCrossPlatformSource),
-      plumber(),
-      dest(jsDestination)
-    ],
-  cb);
-})
+  pump([src(jsCrossPlatformSource), plumber(), dest(jsDestination)], cb);
+});
 
+// App javaScript Task
 task('appJS', function(cb) {
-  pump([
+  pump(
+    [
       src(jsMainSource),
       plumber(),
       concat('app.js'),
@@ -90,30 +96,34 @@ task('appJS', function(cb) {
     ],
     cb
   );
-})
+});
 
+// Image task
 task('image', function(cb) {
   return src(imageSource)
     .pipe(imagemin())
     .pipe(plumber())
-    .pipe(dest(imageDestination))
+    .pipe(dest(imageDestination));
   cb();
-})
+});
 
+// Favicon Task
 task('favicon', function(cb) {
   return src(faviconSource)
     .pipe(plumber())
-    .pipe(dest(faviconDestination))
+    .pipe(dest(faviconDestination));
   cb();
-})
+});
 
+// JSON Task
 task('json', function(cb) {
   return src(jsonSource)
     .pipe(plumber())
-    .pipe(dest(jsonDestination))
+    .pipe(dest(jsonDestination));
   cb();
-})
+});
 
+// Watch Task
 task('watch', function(cb) {
   browserSync.init({
     server: {
@@ -139,14 +149,17 @@ task('watch', function(cb) {
     'build/assets/json/*.json'
   ]).on('change', browserSync.reload);
   cb();
-})
+});
 
-exports.default = parallel( task('html'),
-                            task('sass'),
-                            task('crossPlatformJS'),
-                            task('vendorJS'),
-                            task('appJS'),
-                            task('image'),
-                            task('favicon'),
-                            task('json'),
-                            task('watch'));
+// Default task
+exports.default = parallel(
+  task('html'),
+  task('sass'),
+  task('crossPlatformJS'),
+  task('vendorJS'),
+  task('appJS'),
+  task('image'),
+  task('favicon'),
+  task('json'),
+  task('watch')
+);

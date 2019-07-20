@@ -1,15 +1,11 @@
-//- TO Add New Slide,
-//-     1. Add image in the folder
-//-     2. Add data in objectVariables.pug file with the same format
-//-     3. Add next number in n array
-//-     4. run the pug!
-
-- var n = [1, 2, 3, 4, 5, 6];     // Loop Controler
-- var k = 0;                      // Loop Controler For Bullets
+- var n = [1, 2, 3, 4, 5, 6];     // Loop Controller
+- var k = 0;                      // Loop Controller For Bullets
 - var slides = n.length;          // Number of slides you wish
 include objectVariables.pug
 
-#options-per-view.slider.glide.glide--ltr.glide--slider.glide--swipeable
+//- Carousal container
+#characters-carousal.slider.glide.glide--ltr.glide--slider.glide--swipeable
+  //- Slider
   .slider__track.glide__track(data-glide-el='track')
     ul.slider__slides.glide__slides
       each val, index in n
@@ -31,11 +27,14 @@ include objectVariables.pug
               p.profession= carouselText[val - 1].profession
               a.link(href="") Learn More>>
               
+  //- Controls
   div(data-glide-el='controls')
     a.slider__arrow.slider__arrow--prev.glide__arrow.glide__arrow--prev(data-glide-dir='<' href="#")
       include ../icons/prev-arrow.html
     a.slider__arrow.slider__arrow--next.glide__arrow.glide__arrow--next(data-glide-dir='>' href="#")
       include ../icons/next-arrow.html
+
+  //- Slider Bullets
   .slider__bullets.glide__bullets(data-glide-el='controls[nav]')
     
     while k <= (slides - 3)

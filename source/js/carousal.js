@@ -1,6 +1,5 @@
-var input = document.querySelector('#options-per-view-input')
-
-var glide = new Glide('#options-per-view', {
+// Initializing glide
+var glide = new Glide('#characters-carousal', {
   hoverpause: true,
   autoplay: 10000,
   dragThreshold: 120,
@@ -17,5 +16,5 @@ var glide = new Glide('#options-per-view', {
   }
 });
 
-
+// Starting glide
 glide.mount();

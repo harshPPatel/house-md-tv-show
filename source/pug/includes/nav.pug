@@ -1,5 +1,7 @@
+//- Variables
 include helpers/variables.pug
 
+//- navbar
 nav.navbar.navbar-expand-lg.navbar-light.fixed-top
   .container
     a.navbar-brand(href='#header')
@@ -10,6 +12,7 @@ nav.navbar.navbar-expand-lg.navbar-light.fixed-top
         span.span#two
         span.span#three
     #navbarSupportedContent.collapse.navbar-collapse
+      //- Nav links
       ul.navbar-nav.ml-auto
         each val, index in navLink
           li.nav-item
